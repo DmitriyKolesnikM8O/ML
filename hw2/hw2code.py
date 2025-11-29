@@ -185,10 +185,6 @@ class DecisionTree:
         return np.array(predicted)
     
     def get_params(self, deep=True):
-        """
-        Метод для совместимости со scikit-learn.
-        Возвращает параметры дерева.
-        """
         return {
             'feature_types': self._feature_types,
             'max_depth': self._max_depth,
@@ -197,10 +193,7 @@ class DecisionTree:
         }
 
     def set_params(self, **params):
-        """
-        Метод для совместимости со scikit-learn.
-        Устанавливает параметры дерева.
-        """
+        
         for param, value in params.items():
             setattr(self, '_' + param, value)
         return self
